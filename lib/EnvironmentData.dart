@@ -2,18 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:cupertino_icons/cupertino_icons.dart';
 import 'package:flutter/cupertino.dart';
 
-void main() => runApp(EnvironmentScreen());
-
 class EnvironmentScreen extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      home: PetsDataScreen(),
-    );
-  }
-}
-
-class PetsDataScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

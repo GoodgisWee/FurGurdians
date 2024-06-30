@@ -1,6 +1,7 @@
 import 'dart:ffi';
 import 'dart:ui' as ui;
 import 'package:flutter/material.dart';
+import 'package:fur_guardian/EventPage.dart';
 import 'package:fur_guardian/main.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -67,22 +68,22 @@ class _MapScreenState extends State<MapScreen> {
   }
 
 Future<void> _loadCustomMarker() async {
-  // customIcon = await BitmapDescriptor.fromAssetImage(
-  //   ImageConfiguration(size: ui.Size(48, 48)),
-  //   'assets/duck.png',
-  // );
+  customIcon = await BitmapDescriptor.fromAssetImage(
+    ImageConfiguration(size: ui.Size(48, 48)),
+    'assets/duck.png',
+  );
 
-  // setState(() {
-  //      _markers.add(Marker(
-  //       markerId: MarkerId('marker_1'),
-  //       position: LatLng(3.1220, 101.7398),
-  //       infoWindow: InfoWindow(
-  //         title: 'My Marker',
-  //         snippet: 'A snippet of information',
-  //       ),
-  //       icon: customIcon!,
-  //     ));
-  //   });
+  setState(() {
+       _markers.add(Marker(
+        markerId: MarkerId('marker_1'),
+        position: LatLng(4.3349, 101.1351),
+        infoWindow: InfoWindow(
+          title: 'My Marker',
+          snippet: 'A snippet of information',
+        ),
+        icon: customIcon!,
+      ));
+    });
 }
 
 
@@ -209,12 +210,9 @@ Future<void> _loadCustomMarker() async {
                           color: Colors.white),
                       child: IconButton(
                           onPressed: () {
-                            Navigator.pushReplacement(
-                              context,
-                              MaterialPageRoute(builder: (context) => MyApp()),
+                             mapController.animateCamera(
+                                CameraUpdate.newLatLngZoom(_center, 15.0)
                             );
-                            mapController.animateCamera(
-                                CameraUpdate.newLatLngZoom(_center, 15.0));
                           },
                           icon: Icon(Icons.location_on),
                           iconSize: 40,
@@ -273,7 +271,11 @@ Future<void> _loadCustomMarker() async {
                   SizedBox(height: 10),
                   Visibility(
                       visible: showEventBox,
-                      child: Container(
+                      child: GestureDetector(
+                        onTap: (){
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => EventsPage()));
+                        },
+                        child: Container(
                         height: 130,
                         padding: EdgeInsets.fromLTRB(16, 0, 0, 0),
                         decoration: BoxDecoration(
@@ -350,6 +352,8 @@ Future<void> _loadCustomMarker() async {
                           ],
                         ),
                       )),
+                      ) 
+                      
                 ],
               ),
             ),

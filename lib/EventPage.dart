@@ -1,18 +1,5 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(EventPage());
-}
-
-class EventPage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      home: EventsPage(),
-    );
-  }
-}
-
 class EventsPage extends StatefulWidget {
   @override
   _EventsPageState createState() => _EventsPageState();

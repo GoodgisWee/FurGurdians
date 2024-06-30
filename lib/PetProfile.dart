@@ -135,6 +135,7 @@ class PetsProfileScreen extends StatelessWidget {
       children: [
         CircleAvatar(
           radius: 40,
+          //backgroundImage: AssetImage('assets/duck.png')
           backgroundImage: NetworkImage('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgDFp3dmPTGj1xOEuSlAt-ilTfBOmYfth5hQ&s'),
         ),
         SizedBox(width: 16),

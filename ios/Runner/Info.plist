@@ -47,5 +47,21 @@
 	<true/>
 	<key>GMSApiKey</key>
 	<string>AIzaSyByQD3NDpwM1ez-ppuHPUb1OWPkcPSLKEc</string>
+	<key>CFBundleURLTypes</key>
+<array>
+  <dict>
+    <key>CFBundleTypeRole</key>
+    <string>Editor</string>
+    <key>CFBundleURLSchemes</key>
+    <array>
+      <string>YOUR_REVERSED_CLIENT_ID</string>
+    </array>
+  </dict>
+</array>
+<key>FirebaseAppDelegateProxyEnabled</key>
+<false/>
+<key>GoogleService-Info</key>
+<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+
 </dict>
 </plist>

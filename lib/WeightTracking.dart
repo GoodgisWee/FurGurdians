@@ -1,5 +1,6 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
+import 'package:fur_guardian/chat.dart';
 
 void main() => runApp(WeightTrackingApp());
 
@@ -77,7 +78,7 @@ class WeightTrackingScreen extends StatelessWidget {
           ),
       ),
       SizedBox(height: 16),
-      _buildSuggestionCard(),
+      _buildSuggestionCard(context),
     ],
   ),
 ),
@@ -198,7 +199,7 @@ class WeightTrackingScreen extends StatelessWidget {
         ),);
   }
 
-  Widget _buildSuggestionCard() {
+  Widget _buildSuggestionCard(BuildContext context) {
   return Card(
     color: Colors.white,  // Use 'color' property to set the background color
     margin: EdgeInsets.only(bottom: 16),
@@ -212,7 +213,9 @@ class WeightTrackingScreen extends StatelessWidget {
           Text('You can consider giving your doggy tasty treats like chicken or peanut butter for them to grow big, but ask a vet first to make sure it’s okay!'),
           SizedBox(height: 16),
           ElevatedButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) => ChatScreen()));
+            },
             child: Text('Tell me more about your dog...'),
           ),
         ],

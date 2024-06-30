@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "297808053371",
+    "project_id": "vitrox-furguardian",
+    "storage_bucket": "vitrox-furguardian.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:297808053371:android:c91b6d61096d56d214cede",
+        "android_client_info": {
+          "package_name": "com.example.fur_guardian"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBd3adoQb2pBtNBMrl4vTmTtDjYQquLh4M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
